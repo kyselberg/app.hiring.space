@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
 
   modules: [
+    "nuxt-zod-i18n",
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/image",
@@ -34,7 +35,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    locales: [{ code: "en", language: "en-US", iso: "en-US", file: "en.json" }],
+    locales: [{ code: "en", language: "en-GB", iso: "en-GB", file: "en.json" }],
     defaultLocale: "en",
     lazy: false,
     langDir: "locales",
