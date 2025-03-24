@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxtjs/i18n',
   ],
 
   vite: {
@@ -18,4 +19,15 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+
+  i18n: {
+    locales: [
+      { code: 'en', language: 'en-US', iso: 'en-US', file: 'en.json' },
+    ],
+    defaultLocale: 'en',
+    lazy: false,
+    langDir: 'locales',
+    strategy: 'no_prefix',
+
+  }
 })
