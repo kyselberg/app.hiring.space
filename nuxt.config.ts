@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   security: {
     strict: true,
     rateLimiter: false,
+    csrf: true,
   },
 
   css: ["~/assets/css/main.css"],
