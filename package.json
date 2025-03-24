@@ -25,6 +25,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9.23.0",
     "lucide-vue-next": "^0.483.0",
+    "mongodb": "^6.15.0",
     "nuxt": "^3.16.1",
     "nuxt-security": "^2.2.0",
     "nuxt-zod-i18n": "^1.11.5",
