@@ -15,5 +15,31 @@
       "default": "Log in",
       "loading": "Logging in..."
     }
+  },
+  "registration": {
+    "title": "Create Account",
+    "description": {
+      "text": "Or",
+      "link": "sign in to your account"
+    },
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Enter your full name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password"
+    },
+    "button": {
+      "default": "Create account",
+      "loading": "Creating account..."
+    },
+    "errors": {
+      "default": "Registration failed"
+    }
   }
 }
