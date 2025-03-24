@@ -11,6 +11,11 @@ export default defineNuxtConfig({
     },
   },
 
+  security: {
+    strict: true,
+    rateLimiter: false,
+  },
+
   css: ["~/assets/css/main.css"],
 
   modules: [
@@ -20,6 +25,7 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@nuxtjs/i18n",
     "@nuxtjs/html-validator",
+    "nuxt-security",
   ],
 
   vite: {
