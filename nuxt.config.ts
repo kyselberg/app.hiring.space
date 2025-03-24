@@ -1,5 +1,3 @@
-import tailwindcss from "@tailwindcss/vite";
-
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
@@ -17,7 +15,7 @@ export default defineNuxtConfig({
     csrf: true,
   },
 
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/tailwind.css"],
 
   modules: [
     "nuxt-zod-i18n",
@@ -28,11 +26,9 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/html-validator",
     "nuxt-security",
+    "@nuxtjs/tailwindcss",
+    "shadcn-nuxt",
   ],
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
 
   i18n: {
     locales: [{ code: "en", language: "en-GB", iso: "en-GB", file: "en.json" }],
@@ -67,6 +63,13 @@ export default defineNuxtConfig({
         // Unreasonable rule
         "no-inline-style": "off",
       },
+    },
+  },
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
     },
   },
 });
