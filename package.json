@@ -23,11 +23,14 @@
     "@vueuse/core": "^13.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.41.0",
     "eslint": "^9.23.0",
     "lucide-vue-next": "^0.483.0",
     "nuxt": "^3.16.1",
     "nuxt-security": "^2.2.0",
     "nuxt-zod-i18n": "^1.11.5",
+    "pg": "^8.14.1",
     "reka-ui": "^2.1.1",
     "shadcn-nuxt": "^1.0.3",
     "tailwind-merge": "^3.0.2",
@@ -40,10 +43,13 @@
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@types/eslint-plugin-security": "^3.0.0",
     "@types/node": "^22.13.13",
+    "@types/pg": "^8.11.11",
     "autoprefixer": "^10.4.21",
+    "drizzle-kit": "^0.30.6",
     "eslint-plugin-security": "^3.0.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.3"
   }
 }

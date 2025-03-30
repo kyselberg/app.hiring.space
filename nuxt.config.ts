@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   security: {
     strict: true,
     rateLimiter: false,
-    csrf: true,
+    // csrf: true,
   },
 
   css: ["~/assets/css/tailwind.css"],
