@@ -1,4 +1,4 @@
-import { hash } from "bcryptjs";
+import { genSalt, hash } from "bcryptjs";
 import { z } from "zod";
 import db from "~/server/db";
 import { usersTable } from "~/server/db/schema/users";
@@ -23,7 +23,8 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    const hashedPassword = await hash(password, 10);
+    const salt = await genSalt(parseInt(process.env.CRYPTO_SALT!, 10));
+    const hashedPassword = await hash(password, salt);
 
     const user = await db
       .insert(usersTable)
