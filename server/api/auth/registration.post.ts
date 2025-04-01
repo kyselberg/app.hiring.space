@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
     const body = await readValidatedBody(event, registrationSchema.parse);
     const { email, name, password, confirmPassword } = body;
 
+    // eslint-disable-next-line security/detect-possible-timing-attacks
     if (confirmPassword !== password) {
       throw createError({
         statusCode: 400,
