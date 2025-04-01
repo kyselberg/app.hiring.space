@@ -60,7 +60,7 @@ const handleLogin = async () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form @submit.prevent="handleLogin" class="grid gap-4">
+        <form class="grid gap-4" @submit.prevent="handleLogin">
           <div v-if="errorMessage" class="text-sm text-red-500 mb-2">
             {{ errorMessage }}
           </div>
@@ -68,8 +68,8 @@ const handleLogin = async () => {
             <Label for="email">{{ t("login.email.label") }}</Label>
             <Input
               id="email"
-              type="email"
               v-model="email"
+              type="email"
               :placeholder="t('login.email.placeholder')"
               required
             />
@@ -80,8 +80,8 @@ const handleLogin = async () => {
             </div>
             <Input
               id="password"
-              type="password"
               v-model="password"
+              type="password"
               :placeholder="t('login.password.placeholder')"
               required
             />

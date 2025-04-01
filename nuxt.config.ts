@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     "nuxt-security",
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
+    "nuxt-auth-utils",
   ],
 
   i18n: {
