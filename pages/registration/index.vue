@@ -31,24 +31,19 @@ const handleRegistration = async () => {
       return;
     }
 
-    // Here you would typically call your registration API
-    // For example:
-    // await $fetch('/api/auth/register', {
-    //   method: 'POST',
-    //   body: { name: name.value, email: email.value, password: password.value }
-    // });
-
-    // Mock success for now
-    console.log("Registration attempted with:", {
-      name: name.value,
-      email: email.value,
-      password: password.value,
+    await $fetch("/api/auth/registration", {
+      method: "POST",
+      body: {
+        name: name.value,
+        email: email.value,
+        password: password.value,
+        confirmPassword: confirmPassword.value,
+      },
     });
 
-    // Redirect to login page or dashboard after successful registration
-    router.push("/login");
+    router.push("/");
   } catch (error) {
-    errorMessage.value = t("registration.errors.failed");
+    errorMessage.value = error.statusMessage || t("registration.errors.failed");
     console.error("Registration error:", error);
   } finally {
     isLoading.value = false;

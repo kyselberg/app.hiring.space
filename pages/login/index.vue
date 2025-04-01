@@ -24,23 +24,14 @@ const handleLogin = async () => {
     isLoading.value = true;
     errorMessage.value = "";
 
-    // Here you would typically call your authentication API
-    // For example:
-    // await $fetch('/api/auth/login', {
-    //   method: 'POST',
-    //   body: { email: email.value, password: password.value }
-    // });
-
-    // Mock success for now
-    console.log("Login attempted with:", {
-      email: email.value,
-      password: password.value,
+    await $fetch("/api/auth/login", {
+      method: "POST",
+      body: { email: email.value, password: password.value },
     });
 
-    // Redirect to dashboard or home page after successful login
     router.push("/");
   } catch (error) {
-    errorMessage.value = t("login.errors.failed");
+    errorMessage.value = error.statusMessage || t("login.errors.failed");
     console.error("Login error:", error);
   } finally {
     isLoading.value = false;
