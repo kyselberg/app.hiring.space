@@ -64,12 +64,8 @@
           "name": "answers_quizId_quizes_id_fk",
           "tableFrom": "answers",
           "tableTo": "quizes",
-          "columnsFrom": [
-            "quizId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["quizId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -189,9 +185,7 @@
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
