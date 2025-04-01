@@ -1,7 +1,7 @@
 # todos
 
-- [ ] login
-- [ ] registration
+- [x] login
+- [x] registration
 - [ ] middleware for
 - [ ] dashboard with results
 - [ ] answer page
