@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useI18n, ref, useRouter } from "#imports";
+import { useI18n, ref, useRouter, nextTick } from "#imports";
+import { LoaderCircle } from "lucide-vue-next";
 
 const { t } = useI18n();
 const router = useRouter();
@@ -41,7 +42,8 @@ const handleRegistration = async () => {
       },
     });
 
-    router.push("/");
+    await nextTick();
+    router.replace("/");
   } catch (error) {
     errorMessage.value = error.statusMessage || t("registration.errors.failed");
     console.error("Registration error:", error);
@@ -116,7 +118,7 @@ const handleRegistration = async () => {
             />
           </div>
           <Button type="submit" class="w-full" :disabled="isLoading">
-            <IconLoader2 v-if="isLoading" class="w-4 h-4 mr-2" />
+            <LoaderCircle v-if="isLoading" class="w-4 h-4 mr-2 animate-spin" />
             {{
               isLoading
                 ? t("registration.button.loading")

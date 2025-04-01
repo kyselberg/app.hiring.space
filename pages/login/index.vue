@@ -7,9 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { LoaderCircle } from "lucide-vue-next";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useI18n, ref, useRouter } from "#imports";
+import { useI18n, ref, useRouter, nextTick } from "#imports";
 
 const { t } = useI18n();
 const router = useRouter();
@@ -29,7 +30,8 @@ const handleLogin = async () => {
       body: { email: email.value, password: password.value },
     });
 
-    router.push("/");
+    await nextTick();
+    router.replace("/");
   } catch (error) {
     errorMessage.value = error.statusMessage || t("login.errors.failed");
     console.error("Login error:", error);
@@ -78,7 +80,7 @@ const handleLogin = async () => {
             />
           </div>
           <Button type="submit" class="w-full" :disabled="isLoading">
-            <IconLoader2 v-if="isLoading" class="w-4 h-4 mr-2" />
+            <LoaderCircle v-if="isLoading" class="w-4 h-4 mr-2 animate-spin" />
             {{
               isLoading ? t("login.button.loading") : t("login.button.default")
             }}
