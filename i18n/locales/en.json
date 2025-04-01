@@ -14,14 +14,15 @@
     "button": {
       "default": "Log in",
       "loading": "Logging in..."
-    }
+    },
+    "forgotPassword": "Forgot your password?",
+    "googleButton": "Login with Google",
+    "noAccount": "Don't have an account?",
+    "signupLink": "Sign up"
   },
   "registration": {
     "title": "Create Account",
-    "description": {
-      "text": "Or",
-      "link": "sign in to your account"
-    },
+    "description": "Enter your details to create a new account",
     "name": {
       "label": "Full Name",
       "placeholder": "Enter your full name"
@@ -34,12 +35,20 @@
       "label": "Password",
       "placeholder": "Enter your password"
     },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "Confirm your password"
+    },
     "button": {
       "default": "Create account",
       "loading": "Creating account..."
     },
     "errors": {
-      "default": "Registration failed"
-    }
+      "default": "Registration failed",
+      "passwordMismatch": "Passwords do not match",
+      "failed": "Registration failed. Please try again."
+    },
+    "haveAccount": "Already have an account?",
+    "loginLink": "Log in"
   }
 }
