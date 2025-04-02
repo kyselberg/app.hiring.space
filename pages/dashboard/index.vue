@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppSidebar from "~/components/AppSidebar.vue";
+import QuizList from "~/components/QuizList.vue";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,6 +15,10 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "~/components/ui/sidebar";
+
+definePageMeta({
+  middleware: ["authenticated"],
+});
 </script>
 <template>
   <SidebarProvider collapsible="icon">
@@ -25,24 +30,17 @@ import {
         <Breadcrumb class="flex-1">
           <BreadcrumbList>
             <BreadcrumbItem class="hidden md:block">
-              <BreadcrumbLink href="#">
-                Building Your Application
-              </BreadcrumbLink>
+              <BreadcrumbLink href="#">Dashboard</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator class="hidden md:block" />
             <BreadcrumbItem>
-              <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+              <BreadcrumbPage>My Quizzes</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </header>
       <div class="flex flex-1 flex-col gap-4 p-4">
-        <div class="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div class="aspect-video rounded-xl bg-muted/50" />
-          <div class="aspect-video rounded-xl bg-muted/50" />
-          <div class="aspect-video rounded-xl bg-muted/50" />
-        </div>
-        <div class="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+        <QuizList />
       </div>
     </SidebarInset>
   </SidebarProvider>
